@@ -1,41 +1,107 @@
+import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
 	public static void main(String args[]) {
 		Scanner sc = new Scanner(System.in);
-		int n = sc.nextInt();
-		boolean boo[] = new boolean[n];
-		for (int i = 0; i < n; i++) {
-			long s = sc.nextLong();
-			if (s==0||s==1) {
-				boo[i] = false;
+		ArrayList<String> ss = new ArrayList<String>();
+		for(int i=0;i<ss.size()+1;i++){
+			String str = sc.nextLine();
+			if(ss.get(ss.size()-1).equals("."))
+			{
+				break;
 			}
-			else if(s==2){
-				boo[i]= true;
-				
-			}else if(s==3){
-				boo[i]=true;
-			}else {
-				for (int y = 2; y <= Math.sqrt(s);y++) {
-					if (s % y == 0) {
-						boo[i] = false;
-						break;
-					} else {
-						boo[i] = true;
-					}
-				}
-			}
+			ss.add(str);
 		}
-		for (int t = 0; t < n; t++) {
-			if (boo[t]) {
-				System.out.print("Yes\n");
+			if(ss.size()>13){
+				System.out.print(ss.get(1)+" and "+ss.get(13)+" are inviting you to dinner...");
+			}else if(ss.size()>1&&ss.size()<=12){
+				System.out.print(ss.get(1)+" is the only one for you...");
+			}else{
+				System.out.println("Momo... No one is for you ...");
+			}
+		}	
+	
+}
+
+/*int n = sc.nextInt();
+sc.nextLine();
+String str[] = new String[n];
+DecimalFormat df = new DecimalFormat("#.00");
+String sex=null;
+String h=null;
+for(int i=0;i<n;i++){
+  str[i]=sc.nextLine();
+}
+ArrayList<String> ss = new ArrayList<String>();
+for(int i=0;i<str.length;i++){
+  ss.add(str[i]);
+}
+
+for(int i=0;i<ss.size();i++){
+  sex = ss.get(i).split(" ")[0];
+  h= ss.get(i).split(" ")[1];  
+  if(sex.equals("F")){
+     double b = Double.parseDouble(h);
+     if(b>=1.0&&b<=3.0){
+    	 if(b*1.09>3){
+    		 System.out.print("3.00"+"\n");
+    		
+    	 }else{
+    		 System.out.print(df.format((b)*(1.09))+"\n");
+    	 }
+        
+      }  
+
+  }
+  else {
+    
+    double b = Double.parseDouble(h);
+    if(b>=1.0&&b<=3.0){
+    	if((b/1.09)<=1){
+    		System.out.print("1.00"+"\n");
+    		
+    	}else{
+    		System.out.print(df.format((b)/(1.09))+"\n");
+    	}
+    	
+      
+    }  
+}      
+              
+}*/
+
+/*int n = sc.nextInt();
+boolean boo[] = new boolean[n];
+for (int i = 0; i < n; i++) {
+	long s = sc.nextLong();
+	if (s==0||s==1) {
+		boo[i] = false;
+	}
+	else if(s==2){
+		boo[i]= true;
+		
+	}else if(s==3){
+		boo[i]=true;
+	}else {
+		for (int y = 2; y <= Math.sqrt(s);y++) {
+			if (s % y == 0) {
+				boo[i] = false;
+				break;
 			} else {
-				System.out.print("No\n");
+				boo[i] = true;
 			}
 		}
 	}
 }
-
+for (int t = 0; t < n; t++) {
+	if (boo[t]) {
+		System.out.print("Yes\n");
+	} else {
+		System.out.print("No\n");
+	}
+}*/
 /*
  * ArrayList<String> list = new ArrayList<String>(); for(int j=0;j<=n;j++){
  * String m = sc.nextLine(); for(int i =0;i<m.length();i++){

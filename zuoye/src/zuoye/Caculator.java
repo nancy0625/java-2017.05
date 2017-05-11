@@ -36,7 +36,7 @@ public class Caculator extends JFrame implements ItemListener {
 	public void init() {
 		this.setLayout(new GridLayout(4, 1));
 		// 设置窗口的大小
-		this.setSize(300, 300);
+		this.setSize(400, 400);
 		// 窗口的位置
 		this.setLocation(300, 300);
 		// 关闭窗口时的默认操作
